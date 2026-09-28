@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Kota Komputasional SMA — Adventure v2</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+<header class="top"><div><b>🏙️ KOTA KOMPUTASIONAL SMA</b><small>Adventure • Sistem Komputer</small></div>
+<div class="hud"><span>👤 <b id="hudName">-</b></span><span>⭐ <b id="hudScore">0</b></span><span>❤️ <b id="hudLives">5</b></span><span>🗺️ <b id="hudStage">1/9</b></span></div></header>
+
+<section id="login" class="screen">
+<div class="card login-card"><div class="logo">🏙️⚡💻</div><h1>Kota Komputasional</h1>
+<p>Petualangan Informatika SMA. Jelajahi kota, lewati rintangan, temukan checkpoint, dan selesaikan misi untuk menyelamatkan sistem kota.</p>
+<form id="loginForm"><input id="name" required maxlength="30" placeholder="Nama siswa"><input id="klass" required maxlength="20" placeholder="Kelas (contoh: X-1)"><button>🚀 MASUK KOTA</button></form>
+<div class="tips"><b>Kontrol:</b> keyboard <kbd>WASD</kbd>/<kbd>←↑↓→</kbd> atau joystick layar di HP. Dekati gerbang/misi lalu tekan <b>AKSI</b>.</div></div></section>
+
+<section id="game" class="screen hidden"><div class="game-shell">
+<div class="world-panel"><canvas id="world" width="1000" height="620"></canvas>
+<div class="mobile-controls"><div class="dpad"><button data-k="up">▲</button><div><button data-k="left">◀</button><button data-k="down">▼</button><button data-k="right">▶</button></div></div><button id="actionBtn" class="action">✦ AKSI</button></div>
+<div class="mobile-note">Dekati objek bercahaya lalu tekan AKSI</div></div>
+<aside class="side"><h3>🧭 Misi & Rute</h3><div id="missionPanel"></div><div class="legend">🧑‍💻 Pemain<br>🟦 Gedung misi<br>🟨 Checkpoint<br>🟥 Rintangan<br>🟢 Rute terbuka<br>🔒 Rute terkunci</div><button id="restart" class="darkbtn">↻ Ulangi Perjalanan</button></aside>
+</div></section>
+
+<div id="modal" class="modal hidden"><div class="modal-card"><button id="x" class="x">×</button><div id="modalBody"></div></div></div>
+
+<section id="report" class="screen hidden"><div class="report card"><div class="logo">🏆</div><h1>Perjalanan Selesai!</h1><p id="reportIntro"></p>
+<div class="summary"><div><b id="rScore">0</b><small>Skor</small></div><div><b id="rGrade">0</b><small>Nilai</small></div><div><b id="rDone">0/9</b><small>Misi</small></div><div><b id="rLife">0</b><small>Sisa nyawa</small></div></div>
+<h3>📊 Grafik Penguasaan Materi</h3><canvas id="chart" width="720" height="320"></canvas><div id="evaluation" class="evaluation"></div>
+<button id="again">🔄 Main Lagi</button><button id="print" class="darkbtn">🖨️ Cetak / Simpan PDF</button></div></section>
+</div>
+<script src="game.js"></script>
+</body></html>
